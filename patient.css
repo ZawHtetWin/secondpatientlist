@@ -1,7 +1,51 @@
-.bigbox {
-
+body {
+    font-family: poppins;
 }
 
-.secondbox {
-    margin: 10px;
+.others {
+    font-size: 14px;
+    font-weight: 400;
+    color: #000000;
+}
+
+.bigbox {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.smallbox {
+    width: 100%;
+    height: 100%;
+}
+
+.ml-35 {
+    margin-left: -35px;
+}
+
+.ml-5 {
+    margin-left: -35px;
+}
+
+th {
+    color: #54BAB9;
+}
+
+.labelText {
+    font-size: 12px;
+    font-weight: 400;
+    color: #444444;
+}
+
+.save {
+    color: #ffffff;
+    background-color: #54BAB9;
+}
+
+.cancel {
+    color: #000000;
+}
+
+.update {
+    background-color: #EDC339;
 }
