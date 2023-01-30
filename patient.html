@@ -252,7 +252,7 @@
                                 <div class="row pb-3">
                                     <div class="col col-md-3"></div>
                                     <div class="col col-md-3">
-                                        <button type="button" class="btn border others save px-5" data-bs-dismiss="modal">Save</button>
+                                        <button type="button" onClick="addRow()" class="btn border others save px-5" data-bs-dismiss="modal">Save</button>
                                     </div>
                                     <div class="col col-md-3">
                                         <button type="button" class="btn border others cancel px-5" data-bs-dismiss="modal">Cancel</button>
@@ -321,7 +321,7 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <table class="table table-borderless others">
+                        <table class="table table-borderless others" id="data-table">
                             <thead>
                               <tr>
                                 <th><input type="checkbox"></th>
@@ -338,7 +338,10 @@
                               </tr>
                             </thead>
                             <tbody>
-                              <tr>
+
+                                <tr></tr>
+
+                              <!-- <tr>
                                 <td><input type="checkbox"></td>
                                 <td>B-0011</td>
                                 <td>John Doe</td>
@@ -357,174 +360,7 @@
                                                 <img src="./resources/edit.png" class="p-2">
                                                 <span class="p-3 others">Edit</span>
 
-                                            <!--~~~~~~~~~~~~~~Update Modal Start~~~~~~~~~~~~~~-->
-
-                                            <div class="modal" id="myUpdateModal">
-                                                <div class="modal-dialog modal-dialog-centered">
-                                                  <div class="modal-content">
-                                              
-                                                    <!-- Modal Header -->
-                                                    <div class="modal-headerr text-center align-middle pt-3">
-                                                        <button type="button" class="btn-close float-end" data-bs-dismiss="modal"></button>
-                                                      <h4 class="modal-title " style="font-size: 18px; font-weight: 500; color: #54BAB9;">Update new patient</h4>
-                                                      <h4 class="modal-title" style="font-size: 12px; font-weight: 400; color: #444444;">Enter new patient information below</h4>
-                                                    </div>
-                                              
-                                                    <!-- Modal body -->
-                                                    <div class="modal-body">
-                                                      <div class="container-fluid">
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                <label for="pet_name" class="labelText">Pet Name</label>
-                                                                <input type="text" class="form-control" id="pet_name" name="pet_name">
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <label for="status" class="labelText">Status</label>
-                                                                <div class="input-group mb-3">
-                                                                    <input type="text" class="form-control" placeholder="please choose status" id="status" name="status">
-                                                                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="./resources/black_down.png" type="button"></button>
-                                                                    <ul class="dropdown-menu dropdown-menu-end">
-                                                                      <li>
-                                                                        <a class="dropdown-item" href="#">
-                                                                            allergy
-                                                                            <img src="./resources/allergy.png" class="p-2">
-                                                                        </a>
-                                                                    </li>
-                                                                      <li>
-                                                                        <a class="dropdown-item" href="#">
-                                                                            pinky eater
-                                                                            <img src="./resources/picky eater.png" class="p-2">
-                                                                        </a>
-                                                                    </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                <label for="pawrent" class="labelText">Pawrent</label>
-                                                                <input type="text" class="form-control" id="pawrent" name="pawrent">
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <label for="breed" class="labelText">Breed</label>
-                                                                <div class="input-group mb-3">
-                                                                    <input type="text" class="form-control" placeholder="please choose status" id="breed" name="breed">
-                                                                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="./resources/black_down.png" type="button"></button>
-                                                                    <ul class="dropdown-menu dropdown-menu-end">
-                                                                        <li>
-                                                                            <a class="dropdown-item" href="#">
-                                                                                Beagle
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a class="dropdown-item" href="#">
-                                                                                Spaniel
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a class="dropdown-item" href="#">
-                                                                                Golden Retriever
-                                                                            </a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                    <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>
-                                                                    <label class="form-check-label others px-3" for="radio1">Male</label>
-                                                                    <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">
-                                                                    <label class="form-check-label others px-3" for="radio2">Female</label>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <label for="status" class="labelText">Date of birth</label>
-                                                                <input type="datetime-local" class="form-control">
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                <label for="phonenumber" class="labelText">Contact Phone No.</label>
-                                                                <input type="text" class="form-control" id="phonenumber" name="phonenumber">
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <label for="address" class="labelText">Address</label>
-                                                                <input type="text" class="form-control" id="address" name="address">
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                <label for="city" class="labelText">City</label>
-                                                                <div class="input-group mb-3">
-                                                                    <input type="text" class="form-control" placeholder="please choose city" id="city" name="city">
-                                                                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="./resources/black_down.png" type="button"></button>
-                                                                    <ul class="dropdown-menu dropdown-menu-end">
-                                                                        <li>
-                                                                            <a class="dropdown-item" href="#">
-                                                                                Yangon
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a class="dropdown-item" href="#">
-                                                                                Hlaing
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a class="dropdown-item" href="#">
-                                                                                Hlaing Tharyar
-                                                                            </a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <label for="township" class="labelText">Township</label>
-                                                                <div class="input-group mb-3">
-                                                                    <input type="text" class="form-control" placeholder="please choose township" id="township" name="township">
-                                                                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="./resources/black_down.png" type="button"></button>
-                                                                    <ul class="dropdown-menu dropdown-menu-end">
-                                                                        <li>
-                                                                            <a class="dropdown-item" href="#">
-                                                                                Karmaryut
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a class="dropdown-item" href="#">
-                                                                                Hlaing
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a class="dropdown-item" href="#">
-                                                                                Hlaing Tharyar
-                                                                            </a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                              
-                                                    <!-- Modal footer -->
-                                                    <div class="">
-                                                        <div class="row">
-                                                            <div class="col col-md-3"></div>
-                                                            <div class="col col-md-3">
-                                                                <button type="button" class="btn border others update px-5" data-bs-dismiss="modal">Update</button>
-                                                            </div>
-                                                            <div class="col col-md-3">
-                                                                <button type="button" class="btn border others cancel px-5" data-bs-dismiss="modal">Cancel</button>
-                                                            </div>
-                                                            <div class="col col-md-3"></div>
-                                                        </div>
-                                                    </div>
-                                              
-                                                  </div>
-                                                </div>
-                                              </div>
-
-                                            <!--~~~~~~~~~~~~~~Update Modal End~~~~~~~~~~~~~~-->
-
+                                           
                                         </a>
                                     </li>
                                       <li>
@@ -593,7 +429,7 @@
                                     </li>
                                     </ul>
                                 </td>
-                              </tr>
+                              </tr> -->
                             </tbody>
                           </table>
                     </div>
@@ -606,8 +442,242 @@
 
     </div>
 
+ <!--~~~~~~~~~~~~~~Update Modal Start~~~~~~~~~~~~~~-->
 
+ <div class="modal" id="myUpdateModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-headerr text-center align-middle pt-3">
+ 
+            <div class="row">
+                <div class="col-md-2 col-md-offset-10">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+          <h4 class="modal-title " style="font-size: 18px; font-weight: 500; color: #54BAB9;">Update new patient</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col pb-3">
+          <h4 class="modal-title" style="font-size: 12px; font-weight: 400; color: #444444;">Enter new patient information below</h4>
+                </div>
+            </div>
 
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="pet_name" class="labelText">Pet Name</label>
+                    <input type="text" class="form-control" id="pet_name" name="pet_name">
+                </div>
+                <div class="col-md-6">
+                    <label for="status" class="labelText">Status</label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="please choose status" id="status" name="status">
+                        <button class="btn btn-outline-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="./resources/black_down.png" type="button"></button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                          <li>
+                            <a class="dropdown-item" href="#">
+                                allergy
+                                <img src="./resources/allergy.png" class="p-2">
+                            </a>
+                        </li>
+                          <li>
+                            <a class="dropdown-item" href="#">
+                                pinky eater
+                                <img src="./resources/picky eater.png" class="p-2">
+                            </a>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="pawrent" class="labelText">Pawrent</label>
+                    <input type="text" class="form-control" id="pawrent" name="pawrent">
+                </div>
+                <div class="col-md-6">
+                    <label for="breed" class="labelText">Breed</label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="please choose status" id="breed" name="breed">
+                        <button class="btn btn-outline-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="./resources/black_down.png" type="button"></button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    Beagle
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    Spaniel
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    Golden Retriever
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="gender" class="labelText">Gender</label><br>
+                        <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>
+                        <label class="form-check-label others px-3" for="radio1">Male</label>
+                        <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">
+                        <label class="form-check-label others px-3" for="radio2">Female</label>
+                </div>
+                <div class="col-md-6">
+                    <label for="status" class="labelText">Date of birth</label>
+                    <input type="datetime-local" id="calender" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="phonenumber" class="labelText">Contact Phone No.</label>
+                    <input type="text" class="form-control" id="phonenumber" name="phonenumber">
+                </div>
+                <div class="col-md-6">
+                    <label for="address" class="labelText">Address</label>
+                    <input type="text" class="form-control" id="address" name="address">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="city" class="labelText">City</label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="please choose city" id="city" name="city">
+                        <button class="btn btn-outline-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="./resources/black_down.png" type="button"></button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    Yangon
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    Hlaing
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    Hlaing Tharyar
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="township" class="labelText">Township</label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="please choose township" id="township" name="township">
+                        <button class="btn btn-outline-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="./resources/black_down.png" type="button"></button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    Karmaryut
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    Hlaing
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    Hlaing Tharyar
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="">
+            <div class="row pb-3">
+                <div class="col col-md-3"></div>
+                <div class="col col-md-3">
+                    <button type="button" class="btn border others update px-5" data-bs-dismiss="modal">Update</button>
+                </div>
+                <div class="col col-md-3">
+                    <button type="button" class="btn border others cancel px-5" data-bs-dismiss="modal">Cancel</button>
+                </div>
+                <div class="col col-md-3"></div>
+            </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+<!--~~~~~~~~~~~~~~Update Modal End~~~~~~~~~~~~~~-->
+
+<script>
+    addRow();
+    // addRow();
+    // addRow();
+    function addRow(){
+        let table = document.getElementById('data-table')
+        var row1 = table.insertRow(-1);
+        insertCells(row1);
+    }
+
+    function insertCells(row){
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    var cell5 = row.insertCell(4);
+    var cell6 = row.insertCell(5);
+    var cell7 = row.insertCell(6);
+    var cell8 = row.insertCell(7);
+    var cell9 = row.insertCell(8);
+    var cell10 = row.insertCell(9);
+    var cell11 = row.insertCell(10);
+
+    // Add some text to the new cells:
+    cell1.innerHTML = `<input type="checkbox">`;
+    cell2.innerHTML = 'B-0011';
+    cell3.innerHTML = document.getElementById('pet_name').value;
+    cell4.innerHTML = document.getElementById('status').value;
+    cell5.innerHTML = document.getElementById('pawrent').value;
+    cell6.innerHTML = document.getElementById('breed').value;
+    cell7.innerHTML = document.getElementById('radio1').value;
+    cell8.innerHTML = document.getElementById('calender').value;
+    cell9.innerHTML = document.getElementById('phonenumber').value;
+    cell10.innerHTML = document.getElementById('address').value;
+    cell11.innerHTML = `<button class="btn border-0 btn-outline-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="./resources/more.png" type="button"></button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                  <li>
+                                    <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#myUpdateModal">
+                                            <img src="./resources/edit.png" class="p-2">
+                                            <span class="p-3 others">Edit</span>
+                                        </a>
+                                </li>
+                                  <li>
+                                    <a class="dropdown-item" href="#">
+                                        <img src="./resources/delete.png" class="p-2">
+                                        <span class="p-3 others">Delete</span>
+                                    </a>
+                                </li>
+                                </ul>                    
+                        `;
+    }
+
+</script>
 
 </body>
 </html>
