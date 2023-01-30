@@ -49,3 +49,7 @@ th {
 .update {
     background-color: #EDC339;
 }
+
+imgBorder {
+    border: none;
+}
